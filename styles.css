@@ -226,7 +226,7 @@ body {
 
   .first-text,
   .second-text {
-    font-size: 55px;
+    font-size: 50px;
     letter-spacing: 5px;
   }
 }
@@ -289,7 +289,7 @@ body {
   
   .first-text,
   .second-text {
-    font-size: 50px;
+    font-size: 40px;
   }
   
   .click div:first-child {
@@ -297,7 +297,7 @@ body {
   }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1210px) {
+@media screen and (min-width: 1024px) and (max-width: 1230px) {
   .nav-container > div {
     font-size: 21px;
     letter-spacing: 5px;
@@ -351,7 +351,17 @@ body {
   
   .first-text,
   .second-text {
-    font-size: 45px;
+    font-size: 40px;
+    letter-spacing: normal;
+
+  }
+  .first-text {
+    margin-top: 20px;
+  }
+  
+  .click {
+    display: flex;
+    margin-top: 20px;
   }
   
   .click div:first-child {
@@ -443,11 +453,113 @@ body {
   }
   
   .click {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
   }
   
   .click div:first-child {
     font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .content-container {
+      flex-direction: column;
+  }
+
+  .content-container .content,
+  .content-container .image-container {
+      width: 100%;
+  }
+
+  .hero-image {
+      height: auto;
+  }
+
+  .gallery-container {
+      flex-direction: column;
+  }
+
+  .gallery-image,
+  .gallery-text {
+      width: 100%;
+  }
+
+  .gallery-image {
+      grid-template-columns: 1fr;
+  }
+  .gallery-text {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .text-container {
+    height: auto;
+    margin: 0 20px;
+  }
+  
+  .gallery-text-header {
+    font-size: 16px;
+  }
+  
+  .first-text,
+  .second-text {
+    font-size: 40px;
+  }
+  
+  .click {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .click div:first-child {
+    font-size: 18px;
+  }
+  .click-me {
+    background: #ff7272;
+    padding: 15px 80px;
+    color: white;
+    font-size: 15px;
+    font-weight: lighter;
+    border: none;
+    margin-top: 48px;
+    cursor: pointer;
+  }
+  .gallery-text-header {
+    font-size: 20px;
+    font-weight: lighter;
+  }
+  .first-text,
+  .second-text {
+    font-size: 16px;
+  }
+  .first-text {
+    margin-top: 30px;
+  }
+  
+  .click {
+    display: flex;
+    margin-top: 30px;
+  }
+  
+  .click div:first-child {
+    font-size: 16px;
+    font-weight: lighter;
+    margin-right: 12px;
+  }
+}
+
+@media screen and (max-width: 610px){
+  .content h1 {
+    font-size: 40px;
+    margin-top: 40px;
+  }
+
+  .content p {
+    font-size: 16px;
+    margin-top: 30px;
   }
 }
