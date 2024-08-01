@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Food</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <nav class="nav-container">
+        <div class="menu-items">
+            <div>Home</div>
+            <div>Order</div>
+            <div>Food</div>
+            <div>Restaurant</div>
+            <div>Testimonials</div>
+            <div>Contact Us</div>
+        </div>
+        <div class="menu-bar" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+    <main>
+        <section class="content-container">
+            <div class="content">
+                <h1>LOREM IPSUM</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id est vitae dolor rhoncus
+                    tristique. Maecenas metus quam, rhoncus euismod lorem in, sollicitudin viverra eros. Donec dictum
+                    luctus quam ut tristique. Curabitur nec faucibus purus. Quisque congue sem nec justo mollis, in
+                    tincidunt erat pretium. Sed pulvinar, massa ac porta viverra.</p>
+                <button class="click-me">Click Me</button>
+            </div>
+            <div class="image-container">
+                <img class="hero-image" src="./assets/burger.png" alt="Hero Image" />
+            </div>
+        </section>
+        <section class="gallery-container">
+            <div class="gallery-image">
+                <div class="container1"><img class="image" src="./assets/signboard.png" alt="Signboard" /></div>
+                <div class="container2"><img class="image" src="./assets/dishes.png" alt="Dishes" /></div>
+                <div class="container3"><img class="image" src="./assets/street.png" alt="Street" /></div>
+            </div>
+            <div class="gallery-text">
+                <div class="text-container">
+                    <div class="gallery-text-header">LOREM IPSUM</div>
+                    <div class="first-text">LOREM IPSUM</div>
+                    <div class="second-text">SET ADEMIR</div>
+                    <div class="click">
+                        <div>Click</div>
+                        <div><img src="./assets/arrowIcon.png" alt="Right Arrow"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const menuItems = document.querySelector('.menu-items');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('open');
+                menuItems.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+
+</html>
