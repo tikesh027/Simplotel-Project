@@ -2,8 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Gill Sans";
+  font-family: "Gill Sans", sans-serif;
   font-weight: 500;
+}
+
+html {
+  max-width: 1960px;
+  margin: auto;
+  background: #fff;
 }
 
 body {
@@ -13,6 +19,8 @@ body {
     rgba(240, 195, 255, 1) 89%
   );
 }
+
+/*                                                     Navigation Styles                                                 */
 
 .nav-container {
   display: flex;
@@ -33,6 +41,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .menu-items {
   display: flex;
   justify-content: space-evenly;
@@ -47,20 +56,25 @@ body {
   border-radius: 3px;
 }
 
+/*                                             Content Section                                         */
 
-
-/* Content Section........ */
-
-
+.content-container {
+  display: flex;
+}
 
 .content {
-  padding: 6rem;
+  max-width: 50%;
+  padding: 5rem;
+  align-items: center;
+}
+
+.image-container {
+  max-width: 50%;
 }
 
 .content h1 {
   font-size: 70px;
   letter-spacing: 7px;
-  margin-top: 100px;
   font-weight: 600;
 }
 
@@ -75,44 +89,39 @@ body {
 
 .click-me {
   background: #ff7272;
-  padding: 18px 110px;
   color: white;
-  font-size: 23px;
+  font-size: 18px;
   font-weight: lighter;
   border: none;
   margin-top: 48px;
   cursor: pointer;
+  width: 16rem;
+  height: 3.5rem;
 }
 
 .content-container {
   display: flex;
-}
-
-.content-container .content,
-.content-container .image-container {
-  width: 50%;
+  flex-direction: row;
 }
 
 .hero-image {
-  object-fit: cover;
   width: 100%;
   height: 100vh;
+  object-fit: cover;
 }
 
+/*                                          Gallery Section                                                       */
 
-
-/* Gallery Section............ */
-
-
+.grid-image-container {
+  display: flex;
+  flex: 1;
+}
 
 .gallery-container {
   display: flex;
-  padding: 12rem 4rem 12rem 7rem;
-}
-
-.gallery-image,
-.gallery-text {
-  width: 50%;
+  padding: 12rem 4rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .gallery-image {
@@ -120,30 +129,32 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 15px;
   margin: 20px 0;
+  height: auto;
 }
 
 .container1,
 .container3 {
-  height: 280px;
-  margin: 0 12px;
+  height: 350px;
 }
 
 .container2 {
   height: 100%;
   grid-row: span 2;
-  margin: 0 10px 0 16px;
 }
 
 .image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .gallery-text {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 1;
+  width: 100%;
 }
 
 .text-container {
@@ -181,89 +192,56 @@ body {
   margin-right: 12px;
 }
 
+/* Media Queries */
 
-
-/* Media Queries........ */
-
-
-
-@media screen and (min-width: 1350px) and (max-width: 1700px) {
+@media screen and (max-width: 1700px) {
   .content {
     padding: 4rem;
   }
-  
+
   .content h1 {
     font-size: 58px;
-    letter-spacing: 7px;
-    margin-top: 80px;
-    font-weight: 600;
   }
-  
+
   .content p {
     font-size: 23px;
-  }
-  
-  .click-me {
-    background: #ff7272;
-    padding: 18px 110px;
-    color: white;
-    font-size: 23px;
-    font-weight: lighter;
-    border: none;
-    margin-top: 48px;
-    cursor: pointer;
-  }
-
-  .container1,
-  .container3 {
-    height: 280px;
-    margin: 0 10px;
-  }
-
-  .container2 {
-    margin: 0 8px 0 10px;
   }
 
   .first-text,
   .second-text {
-    font-size: 50px;
-    letter-spacing: 5px;
+    font-size: 55px;
+  }
+  .container1,
+  .container3 {
+    height: 465px;
   }
 }
 
-@media screen and (min-width: 1210px) and (max-width: 1350px) {
-  .content {
-    padding: 4rem;
-  }
-  
-  .content h1 {
-    font-size: 55px;
-    margin-top: 70px;
-  }
-  
-  .content p {
-    font-size: 23px;
-  }
-  
-  .click-me {
-    background: #ff7272;
-    padding: 18px 110px;
-    color: white;
-    font-size: 23px;
-    font-weight: lighter;
-    border: none;
-    margin-top: 48px;
-    cursor: pointer;
-  }
-
+@media screen and (max-width: 1600px) {
   .container1,
   .container3 {
-    height: 240px;
-    margin: 0 12px;
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .content h1 {
+    font-size: 45px;
+  }
+
+  .content p {
+    font-size: 20px;
+    font-weight: 300;
+    padding: 2rem 0;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    margin-top: 50px;
   }
 
   .text-container {
     padding: 30px;
+    height: 280px;
+    margin: 0 40px;
   }
 
   .first-text,
@@ -271,35 +249,24 @@ body {
     font-size: 50px;
   }
 
-  .click {
-    margin-top: 34px;
-  }
-  .gallery-text {
-    padding: 25px;
-  }
-  
-  .text-container {
-    height: 280px;
-    margin: 0 40px;
-  }
-  
   .gallery-text-header {
     font-size: 20px;
   }
-  
-  .first-text,
-  .second-text {
-    font-size: 40px;
-  }
-  
+
   .click div:first-child {
     font-size: 22px;
   }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1230px) {
+@media screen and (max-width: 1210px) {
+  .first-text,
+  .second-text {
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 6px;
+  }
   .nav-container > div {
-    font-size: 21px;
+    font-size: 18px;
     letter-spacing: 5px;
   }
 
@@ -309,23 +276,24 @@ body {
   }
 
   .content h1 {
-    font-size: 50px;
-    margin-top: 80px;
+    font-size: 45px;
+  }
+  .content p {
+    font-size: 20px;
+    font-weight: 300;
+    padding: 1rem 0;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    margin-top: 50px;
   }
 
   .content p {
     font-size: 20px;
-    margin-top: 50px;
   }
 
   .container1,
   .container3 {
-    height: 220px;
-    margin: 0 12px;
-  }
-
-  .text-container {
-    padding: 36px;
+    height: 210px;
   }
 
   .first-text,
@@ -333,233 +301,169 @@ body {
     font-size: 40px;
   }
 
-  .click {
-    margin-top: 32px;
-  }
-  .gallery-text {
-    padding: 20px;
-  }
-  
-  .text-container {
-    height: 260px;
-    margin: 0 30px;
-  }
-  
   .gallery-text-header {
     font-size: 18px;
   }
-  
-  .first-text,
-  .second-text {
-    font-size: 40px;
-    letter-spacing: normal;
 
-  }
-  .first-text {
-    margin-top: 20px;
-  }
-  
-  .click {
-    display: flex;
-    margin-top: 20px;
-  }
-  
   .click div:first-child {
     font-size: 20px;
   }
+  .gallery-container {
+    padding: 7rem 1rem;
+  }
 }
 
-
 @media screen and (max-width: 1024px) {
-  .menu-items {
-      display: none;
-      flex-direction: column;
-      width: 100%;
+  .content-container {
+    display: flex;
+    flex-direction: column;
   }
 
-  .content h1 {
-    font-size: 50px;
-    margin-top: 20px;
+  .grid-image-container {
+    max-width: 100%;
+  }
+  .gallery-text {
+    max-width: 100%;
+  }
+
+  .content {
+    max-width: 100%;
+    padding: 5rem;
+  }
+
+  .image-container {
+    max-width: 100%;
+  }
+
+  .menu-items {
+    display: none;
+    flex-direction: column;
+    width: 100%;
   }
 
   .menu-bar {
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
+    cursor: pointer;
   }
 
   .menu-items.open {
-      display: flex;
+    display: flex;
   }
 
   .nav-container {
-      display: flex;
-      flex-direction: column;
-      padding: 18px;
-      align-items: flex-start;
+    flex-direction: column-reverse;
+    padding: 12px;
+    align-items: flex-start;
   }
 
   .nav-container .menu-items > div {
-      width: 100%;
-      padding: 12px 0;
-      text-align: left;
+    width: 100%;
+    padding: 12px 0;
+    text-align: left;
   }
-}
 
-@media screen and (max-width: 1024px) {
+  .content {
+    padding: 2rem;
+  }
+
   .content-container {
-      flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   .content-container .content,
   .content-container .image-container {
-      width: 100%;
+    width: 100%;
   }
 
   .hero-image {
-      height: auto;
+    height: auto;
   }
 
   .gallery-container {
-      flex-direction: column;
+    display: flex;
+    padding: 1rem 1rem;
+    width: 100%;
+    flex-direction: column;
   }
 
-  .gallery-image,
   .gallery-text {
-      width: 100%;
-  }
-
-  .gallery-image {
-      grid-template-columns: 1fr;
-  }
-  .gallery-text {
+    max-width: 100%;
     flex-direction: column;
     text-align: center;
-    padding: 15px;
   }
-  
+
   .text-container {
     height: auto;
     margin: 0 20px;
   }
-  
+
   .gallery-text-header {
     font-size: 16px;
   }
-  
+
   .first-text,
   .second-text {
     font-size: 40px;
   }
-  
+
   .click {
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
   }
-  
+
   .click div:first-child {
     font-size: 18px;
+  }
+
+  .gallery-image {
+    width: 100%;
+    height: auto;
+  }
+  .container1,
+  .container3 {
+    height: 350px;
   }
 }
 
-@media screen and (max-width: 500px) {
-  .content-container {
-      flex-direction: column;
+@media screen and (max-width: 800px) {
+  .container1,
+  .container3 {
+    height: 300px;
   }
+}
 
-  .content-container .content,
-  .content-container .image-container {
-      width: 100%;
-  }
-
-  .hero-image {
-      height: auto;
-  }
-
-  .gallery-container {
-      flex-direction: column;
-  }
-
-  .gallery-image,
-  .gallery-text {
-      width: 100%;
-  }
-
+@media screen and (max-width: 700px) {
   .gallery-image {
-      grid-template-columns: 1fr;
-  }
-  .gallery-text {
-    flex-direction: column;
-    text-align: center;
-    padding: 15px;
-  }
-  
-  .text-container {
     height: auto;
-    margin: 0 20px;
+    width: 100%;
   }
-  
-  .gallery-text-header {
-    font-size: 16px;
-  }
-  
-  .first-text,
-  .second-text {
-    font-size: 40px;
-  }
-  
-  .click {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .click div:first-child {
-    font-size: 18px;
-  }
-  .click-me {
-    background: #ff7272;
-    padding: 15px 80px;
-    color: white;
-    font-size: 15px;
-    font-weight: lighter;
-    border: none;
-    margin-top: 48px;
-    cursor: pointer;
-  }
-  .gallery-text-header {
-    font-size: 20px;
-    font-weight: lighter;
-  }
-  .first-text,
-  .second-text {
-    font-size: 16px;
+  .text-container {
+    width: 100%;
   }
   .first-text {
-    margin-top: 30px;
+    font-size: 20px;
   }
-  
-  .click {
-    display: flex;
-    margin-top: 30px;
-  }
-  
-  .click div:first-child {
-    font-size: 16px;
-    font-weight: lighter;
-    margin-right: 12px;
+  .second-text {
+    font-size: 20px;
   }
 }
 
-@media screen and (max-width: 610px){
-  .content h1 {
-    font-size: 40px;
-    margin-top: 40px;
+@media screen and (max-width: 600px) {
+  .container1,
+  .container3 {
+    height: 200px;
   }
+}
 
-  .content p {
-    font-size: 16px;
-    margin-top: 30px;
+@media screen and (max-width: 400px) {
+  .container1,
+  .container3 {
+    height: 160px;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  .container1,
+  .container3 {
+    height: 120px;
   }
 }
