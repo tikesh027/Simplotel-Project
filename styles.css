@@ -406,8 +406,9 @@ body {
   }
 
   .click {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
   }
 
   .click div:first-child {
